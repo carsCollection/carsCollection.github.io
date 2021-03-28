@@ -1,0 +1,20 @@
+import { html } from '../node_modules/lit-html/lit-html.js';
+
+const homeTemplate = () => html`
+<section class="home">
+    <h1>Welcome to carsCollection!</h1>
+    <p>Your own list of cars! Create, modify, delete!</p>
+    <img src="/images/home.png" alt="no pic">
+    <p>
+        <a href="/login">Login</a> or <a href="/register">register</a> to see all cars enlisted!
+    </p>
+</section>`;
+
+export async function homePage(ctx) {
+    const token = sessionStorage.getItem('authToken');
+    if (token != null) {
+        ctx.page.redirect('/allCars')
+    } else {
+        ctx.render(homeTemplate());
+    }
+}

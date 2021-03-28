@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>carsCollection</title>
     <link rel="stylesheet" href="/style/site.css">
     <link rel="stylesheet" href="/style/create.css">
     <link rel="stylesheet" href="/style/my-cars.css">
     <link rel="stylesheet" href="/style/details.css">
     <link rel="stylesheet" href="/style/edit.css">
+    <link rel="stylesheet" href="/style/login-register.css">
+    <script src="/src/app.js" type="module"></script>
 </head>
 
 <body>
@@ -21,11 +23,12 @@
         </h1>
 
         <nav>
-            <a class="dashboard" href="/home">Dashboard</a>
             <div id="user">
+                <a class="dashboard" href="/allCars">Dashboard</a>
+                <a id="welcome">Welcome, username!</a>
                 <a href="/create">Create a car</a>
                 <a href="/my-cars">My cars</a>
-                <a href="javascript:void(0)">Logout</a>
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
             </div>
             <div id="guest">
                 <a href="/login">Login</a>
@@ -35,79 +38,12 @@
     </header>
 
     <div class="container">
-        <section class="createCar">
-            <div>
-                <h1>Create New Car</h1>
-                <p>Please fill in all fields!</p>
-            </div>
-
-            <form action="">
-                <div>
-                    <label for="new-brand">Brand</label>
-                    <input name="new-brand" type="text">
-                    <label for="new-model">Model</label>
-                    <input name="new-model" type="text">
-                    <label for="new-year">Year of production</label>
-                    <input name="new-year" type="number">
-                    <label for="new-price">Price</label>
-                    <input name="new-price" type="number">
-                    <input type="submit" value="Create">
-                </div>
-            </form>
-        </section>
-
-        <section class="my-cars">
-            <div>
-                <h1>My Cars</h1>
-                <p class="list">This is a list of your favourite cars!</p>
-            </div>
-
-            <div class="my-collection">
-                <img src="https://www.firstvehicleleasing.co.uk/img/vehicles/e_31513.jpg" alt="car">
-                <p><span>Brand & Model</span></p>
-                <p><span>Year of production</span></p>
-                <p>Price <span>$100</span></p>
-                <a class="btn" href="">Details</a>
-            </div>
-        </section>
-
-        <section class="details">
-            <div>
-                <h1>Car details</h1>
-            </div>
-
-            <div class="my-collection">
-                <img src="https://www.firstvehicleleasing.co.uk/img/vehicles/e_31513.jpg" alt="car">
-                <p><span>Brand & Model</span></p>
-                <p><span>Year of production</span></p>
-                <p>Price <span>$100</span></p>
-                <a class="in-details" href="">Edit</a>
-                <a class="in-details" href="">Delete</a>
-            </div>
-        </section>
-
-        <section class="createCar">
-            <div>
-                <h1>Edit Car</h1>
-                <p>Please fill in all fields!</p>
-            </div>
-
-            <form action="">
-                <div>
-                    <label for="new-brand">Brand</label>
-                    <input name="new-brand" type="text">
-                    <label for="new-model">Model</label>
-                    <input name="new-model" type="text">
-                    <label for="new-year">Year of production</label>
-                    <input name="new-year" type="number">
-                    <label for="new-price">Price</label>
-                    <input name="new-price" type="number">
-                    <input type="submit" value="Update">
-                </div>
-            </form>
-        </section>
 
     </div>
+
+    <footer class="footer">
+        <p>Made by Hristo Atanasov. Simple Exercise!</p>
+    </footer>
 
 </body>
 
