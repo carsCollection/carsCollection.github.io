@@ -1,5 +1,5 @@
 import { render } from 'https://unpkg.com/lit-html?module';
-import page from 'https://unpkg.com/page/page.mjs';
+import page from 'https://cdn.rawgit.com/visionmedia/page.js/master/page.mjs';
 
 import { logout as apiLogout } from '../src/api/data.js';
 import { homePage } from '../views/home.js';
