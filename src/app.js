@@ -10,7 +10,7 @@ const container = document.querySelector('.container');
 document.getElementById('logoutBtn').addEventListener('click', logout);
 
 page('/', decorateContext, homePage);
-// page('/index.html', decorateContext, homePage);
+page('/index.html', decorateContext, homePage);
 page('/login', decorateContext, loginPage);
 page('/register', decorateContext, registerPage);
 
