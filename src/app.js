@@ -1,4 +1,4 @@
-import { render } from '../node_modules/lit-html/lit-html.js';
+import { render } from 'https://unpkg.com/lit-html?module';
 import page from '../node_modules/page/page.mjs';
 
 import { logout as apiLogout } from '../src/api/data.js';
@@ -27,11 +27,11 @@ function setUserNav() {
     const username = sessionStorage.getItem('username');
     if (username != null) {
         document.getElementById('welcome').textContent = `Welcome, ${username}`;
-        document.getElementById('user').style.display = 'block';
+        document.getElementById('user').style.display = 'inline-block';
         document.getElementById('guest').style.display = 'none';
     } else {
         document.getElementById('user').style.display = 'none';
-        document.getElementById('guest').style.display = 'block';
+        document.getElementById('guest').style.display = 'inline-block';
     }
 }
 
