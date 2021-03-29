@@ -1,4 +1,5 @@
 import { html } from 'https://unpkg.com/lit-html?module';
+
 import { getCarById, deleteCarById } from '../src/api/data.js';
 
 const detailsTemplate = (car, onDelete, isOwner) => html`
