@@ -1,3 +1,7 @@
+.details {
+    text-align: center;
+}
+
 .details h1 {
     padding: 40px;
 }
@@ -14,6 +18,7 @@
     padding: 4px;
     letter-spacing: 1px;
     background-color: rgb(212, 212, 212);
+    
 }
 
 .in-details:hover {

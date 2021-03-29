@@ -1,17 +1,29 @@
 import { html } from 'https://unpkg.com/lit-html?module';
+import { getCarsByOwner } from '../src/api/data.js';
 
-const myCarsTemplate = () => html`
+
+const myCarsTemplate = (data) => html`
 <section class="my-cars">
-    <div>
-        <h1>My Cars</h1>
-        <p class="list">This is a list of your favourite cars!</p>
-    </div>
-
+    <h1>My Cars</h1>
     <div class="my-collection">
-        <img src="https://www.firstvehicleleasing.co.uk/img/vehicles/e_31513.jpg" alt="car">
-        <p><span>Brand & Model</span></p>
-        <p><span>Year of production</span></p>
-        <p>Price <span>$100</span></p>
-        <a class="btn" href="">Details</a>
+
+        ${data.length ? html`${data.map(carTemplate)}` : html`<p class="no-cars">No cars in database.</p>`}
+
     </div>
 </section>`;
+
+const carTemplate = (car) => html`
+<div>
+    <p>${car.title}</p>
+    <img alt="no-pic" src=${car.imageUrl}>
+</div>
+<div>
+    <a class="btn" href="/details/${car.objectId}">Details</a>
+</div>`;
+
+export async function myCarsPage(ctx) {
+    const ownerId = sessionStorage.getItem('userId');
+    const [data] = await getCarsByOwner(ownerId);
+
+    ctx.render(myCarsTemplate(data));
+}

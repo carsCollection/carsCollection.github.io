@@ -1,18 +1,28 @@
 import { render } from 'https://unpkg.com/lit-html?module';
 import page from 'https://cdn.rawgit.com/visionmedia/page.js/master/page.mjs';
 
-import { logout as apiLogout } from '../src/api/data.js';
 import { homePage } from '../views/home.js';
 import { loginPage } from '../views/login.js';
 import { registerPage } from '../views/register.js';
+import { createPage } from '../views/create.js';
+import { logout as apiLogout } from '../src/api/data.js';
+import { allCarsPage } from '../views/allCars.js';
+import { detailsPage } from '../views/details.js';
+import { editPage } from '../views/edit.js';
+import { myCarsPage } from '../views/mycars.js';
 
 const container = document.querySelector('.container');
 document.getElementById('logoutBtn').addEventListener('click', logout);
 
 page('/', decorateContext, homePage);
-page('/index.html', decorateContext, homePage);
+// page('/index.html', decorateContext, homePage);
 page('/login', decorateContext, loginPage);
 page('/register', decorateContext, registerPage);
+page('/create', decorateContext, createPage);
+page('/allCars', decorateContext, allCarsPage);
+page('/details/:id', decorateContext, detailsPage);
+page('/edit/:id', decorateContext, editPage);
+page('/my-cars', decorateContext, myCarsPage);
 
 setUserNav();
 page.start();
